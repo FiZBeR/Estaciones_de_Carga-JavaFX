@@ -1,0 +1,17 @@
+.button {
+    -fx-background-color: transparent; /* Color de fondo morado */
+    -fx-text-fill: white;          /* Color del texto en blanco */
+    -fx-font-size: 14px;
+    -fx-background-radius: 0;      /* Sin bordes redondeados */
+    -fx-alignment: CENTER_LEFT;   /* Espacio entre el icono y el texto */
+}
+
+.button:hover {
+    -fx-background-color: #3f336e; /* Color al pasar el mouse */
+}
+
+.menu-container {
+    -fx-background-color: #6E5CC2; /* Fondo del contenedor del menú */
+    -fx-spacing: 10px;             /* Espaciado entre botones */
+    -fx-padding: 15px 0;           /* Espaciado interno arriba y abajo */
+}

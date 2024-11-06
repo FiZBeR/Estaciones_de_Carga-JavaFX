@@ -1,0 +1,19 @@
+.button {
+    -fx-background-color: white; /* Fondo transparente */
+    -fx-border-color: #DEE1E6;         /* Color del borde en gris claro */
+    -fx-border-width: 1px;             /* Ancho del borde */
+    -fx-border-radius: 4px;            /* Bordes ligeramente redondeados */
+    -fx-text-fill: #6f5ea7;            /* Color del texto en morado */
+    -fx-font-size: 14px;               /* Tamaño de fuente */
+    -fx-padding: 5px 15px;             /* Espaciado interno */
+    -fx-background-insets: 0;          /* Alineación del borde y el fondo */
+    -fx-background-radius: 4px;        /* Radio de fondo, para que coincida con el borde */
+}
+
+.button:hover {
+    -fx-background-color: #f1effa;     /* Color de fondo al pasar el mouse */
+}
+
+.button-container {
+    -fx-spacing: 10px;                 /* Espaciado entre botones */
+}

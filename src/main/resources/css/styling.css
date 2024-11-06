@@ -1,0 +1,12 @@
+.button {
+    -fx-background-color: #4a3b80; /* Color morado */
+    -fx-text-fill: white;          /* Color del texto */
+    -fx-font-size: 14px;           /* Tamaño de fuente */
+    -fx-font-weight: bold;         /* Texto en negrita */
+    -fx-padding: 10px 20px;       /* Borde redondeado */
+    -fx-border-width: 0;           /* Sin borde adicional */
+}
+
+.button:hover {
+    -fx-background-color: #7a68a5; /* Color más oscuro al pasar el mouse */
+}
