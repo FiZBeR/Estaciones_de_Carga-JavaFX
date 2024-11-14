@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="364.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.controlador.FormPuntoDeCargaController">
+<AnchorPane fx:id="viewPdC" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.controlador.FormPuntoDeCargaController">
    <children>
-      <TextField id="txIdPdC" fx:id="txIDPuntoDeCarga" layoutX="108.0" layoutY="118.0" promptText="Id Punto de Carga" />
-      <TextField id="txEstadoPdC" fx:id="txEstadoEquipoPDC" layoutX="108.0" layoutY="214.0" promptText="Estado del Equipo" />
-      <TextField id="txConector" fx:id="tcConectorPDC" layoutX="108.0" layoutY="166.0" promptText="Conector" />
-      <Pane prefHeight="80.0" prefWidth="364.0" style="-fx-background-color: #52438f;">
-         <children>
-            <Label layoutX="90.0" layoutY="21.0" text="Punto de Carga" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="27.0" />
-               </font>
-            </Label>
-         </children></Pane>
-      <Button id="btCrearEquipo" fx:id="btCrearEquipo" layoutX="193.0" layoutY="303.0" mnemonicParsing="false" text="Crear un Nuevo Equipo" />
-      <Button id="btCrearPdC" fx:id="btCrearPDC" layoutX="94.0" layoutY="342.0" mnemonicParsing="false" stylesheets="@../css/styling.css" text="Crear Punto de carga" />
-      <RadioButton id="txBoolean" fx:id="opYes" layoutX="130.0" layoutY="267.0" mnemonicParsing="false" text="Si" />
-      <RadioButton id="txBoolean2" fx:id="opNo" layoutX="193.0" layoutY="267.0" mnemonicParsing="false" text="No" />
-      <Label layoutX="141.0" layoutY="250.0" text="Esta Disponible" />
-      <ComboBox fx:id="cbSelectEquipo" layoutX="26.0" layoutY="303.0" prefWidth="150.0" promptText="Elegir Equipo" />
+      <TextField id="txIdPdC" fx:id="txIDPuntoDeCarga" layoutX="199.0" layoutY="103.0" prefHeight="53.0" prefWidth="165.0" promptText="Id Punto de Carga" />
+      <TextField id="txEstadoPdC" fx:id="txEstadoEquipoPDC" layoutX="198.0" layoutY="243.0" prefHeight="53.0" prefWidth="165.0" promptText="Estado del Equipo" />
+      <TextField id="txConector" fx:id="tcConectorPDC" layoutX="198.0" layoutY="171.0" prefHeight="53.0" prefWidth="165.0" promptText="Conector" />
+      <Button id="btCrearPdC" fx:id="btCrearPDC" layoutX="191.0" layoutY="431.0" mnemonicParsing="false" onAction="#crearPdC" stylesheets="@../css/styling.css" text="Crear Punto de carga" />
+      <RadioButton id="txBoolean" fx:id="opYes" layoutX="201.0" layoutY="361.0" mnemonicParsing="false" text="Si">
+         <font>
+            <Font size="18.0" />
+         </font></RadioButton>
+      <RadioButton id="txBoolean2" fx:id="opNo" layoutX="297.0" layoutY="361.0" mnemonicParsing="false" text="No">
+         <font>
+            <Font size="18.0" />
+         </font></RadioButton>
+      <Label layoutX="220.0" layoutY="318.0" text="Esta Disponible">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="183.0" layoutY="30.0" text="Punto de Carga" textFill="#52438f">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

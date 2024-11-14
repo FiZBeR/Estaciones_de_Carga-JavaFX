@@ -4,48 +4,50 @@ import java.io.*;
 import java.util.*;
 
 /**
- * Clase que representa un Mantenimiento realizado en un equipo.
+ * Representa un registro de mantenimiento en una estación de carga,
+ * con detalles sobre el técnico, la fecha y observaciones del mantenimiento.
  */
 public class Mantenimiento {
+
     /**
-     * Fecha en la que se realizó el mantenimiento.
+     * Fecha en que se realizó el mantenimiento.
      */
     private String fecha;
 
     /**
-     * Identificador del técnico que realizó el mantenimiento.
+     * Identificador único del técnico que realizó el mantenimiento.
      */
     private String idTecnico;
 
     /**
      * Nombre del técnico que realizó el mantenimiento.
      */
-    private String tecnico;
+    private String nombreTecnico;
 
     /**
-     * Observaciones realizadas durante el mantenimiento.
+     * Observaciones sobre el mantenimiento realizado.
      */
     private String observaciones;
 
     /**
-     * Constructor para crear una nueva instancia de Mantenimiento.
+     * Constructor para inicializar una instancia de Mantenimiento con los atributos especificados.
      *
-     * @param fecha         Fecha en la que se realizó el mantenimiento.
-     * @param idTecnico     Identificador del técnico.
-     * @param tecnico       Nombre del técnico.
-     * @param observaciones Observaciones realizadas durante el mantenimiento.
+     * @param fecha Fecha del mantenimiento.
+     * @param idTecnico ID del técnico encargado del mantenimiento.
+     * @param nombreTecnico Nombre del técnico encargado del mantenimiento.
+     * @param observaciones Observaciones sobre el mantenimiento realizado.
      */
-    public Mantenimiento(String fecha, String idTecnico, String tecnico, String observaciones) {
+    public Mantenimiento(String fecha, String idTecnico, String nombreTecnico, String observaciones) {
         this.fecha = fecha;
         this.idTecnico = idTecnico;
-        this.tecnico = tecnico;
+        this.nombreTecnico = nombreTecnico;
         this.observaciones = observaciones;
     }
 
     /**
-     * Obtiene la fecha en la que se realizó el mantenimiento.
+     * Obtiene la fecha del mantenimiento.
      *
-     * @return Fecha del mantenimiento.
+     * @return La fecha del mantenimiento en formato de cadena.
      */
     public String getFecha() {
         return fecha;
@@ -54,52 +56,52 @@ public class Mantenimiento {
     /**
      * Establece la fecha del mantenimiento.
      *
-     * @param fecha Fecha del mantenimiento.
+     * @param fecha Nueva fecha del mantenimiento.
      */
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
     /**
-     * Obtiene el identificador del técnico que realizó el mantenimiento.
+     * Obtiene el ID del técnico.
      *
-     * @return Identificador del técnico.
+     * @return El ID del técnico como cadena.
      */
     public String getIdTecnico() {
         return idTecnico;
     }
 
     /**
-     * Establece el identificador del técnico.
+     * Establece el ID del técnico.
      *
-     * @param idTecnico Identificador del técnico.
+     * @param idTecnico Nuevo ID del técnico.
      */
     public void setIdTecnico(String idTecnico) {
         this.idTecnico = idTecnico;
     }
 
     /**
-     * Obtiene el nombre del técnico que realizó el mantenimiento.
+     * Obtiene el nombre del técnico.
      *
-     * @return Nombre del técnico.
+     * @return El nombre del técnico como cadena.
      */
-    public String getTecnico() {
-        return tecnico;
+    public String getNombreTecnico() {
+        return nombreTecnico;
     }
 
     /**
      * Establece el nombre del técnico.
      *
-     * @param tecnico Nombre del técnico.
+     * @param nombreTecnico Nuevo nombre del técnico.
      */
-    public void setTecnico(String tecnico) {
-        this.tecnico = tecnico;
+    public void setNombreTecnico(String nombreTecnico) {
+        this.nombreTecnico = nombreTecnico;
     }
 
     /**
-     * Obtiene las observaciones realizadas durante el mantenimiento.
+     * Obtiene las observaciones del mantenimiento.
      *
-     * @return Observaciones del mantenimiento.
+     * @return Las observaciones como cadena.
      */
     public String getObservaciones() {
         return observaciones;
@@ -108,45 +110,45 @@ public class Mantenimiento {
     /**
      * Establece las observaciones del mantenimiento.
      *
-     * @param observaciones Observaciones del mantenimiento.
+     * @param observaciones Nuevas observaciones del mantenimiento.
      */
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
     }
 
     /**
-     * Devuelve una representación en formato String del objeto Mantenimiento.
+     * Proporciona una representación en cadena del objeto Mantenimiento.
      *
-     * @return String con los detalles del mantenimiento.
+     * @return Una cadena que representa los detalles del mantenimiento.
      */
     @Override
     public String toString() {
         return "Mantenimiento{" +
                 "fecha='" + fecha + '\'' +
                 ", idTecnico='" + idTecnico + '\'' +
-                ", tecnico='" + tecnico + '\'' +
+                ", nombreTecnico='" + nombreTecnico + '\'' +
                 ", observaciones='" + observaciones + '\'' +
                 '}';
     }
 
     /**
-     * Calcula el costo del mantenimiento basado en los minutos empleados.
+     * Calcula el costo del mantenimiento basado en el tiempo dedicado.
      *
-     * @param minutos Cantidad de minutos que duró el mantenimiento.
-     * @return Costo del mantenimiento.
+     * @param minutos La cantidad de minutos dedicados al mantenimiento.
+     * @return El costo calculado del mantenimiento.
      */
     public double costoMantenimiento(int minutos) {
-        // TODO implement here
-        return 0.0d;
+        // TODO implementar aquí
+        return 0.0;
     }
 
     /**
-     * Obtiene la fecha y hora actual como un String.
+     * Obtiene la hora en la que se realizó el mantenimiento.
      *
-     * @return Fecha y hora actual.
+     * @return La hora del mantenimiento en formato de cadena.
      */
-    public String ahora() {
-        // TODO implement here
+    public String hora() {
+        // TODO implementar aquí
         return "";
     }
 

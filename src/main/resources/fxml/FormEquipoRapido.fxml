@@ -4,25 +4,20 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="327.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.controlador.FormEquipoRapidoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.controlador.FormEquipoRapidoController">
    <children>
-      <Pane prefHeight="82.0" prefWidth="327.0" style="-fx-background-color: #52438f;">
-         <children>
-            <Label layoutX="78.0" layoutY="24.0" text="Equipo Rapido " textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-         </children></Pane>
-      <TextField fx:id="txEquipoID" layoutX="65.0" layoutY="108.0" prefHeight="25.0" prefWidth="191.0" promptText="Id Equipo" />
-      <TextField fx:id="txEquipoNivelCarga" layoutX="65.0" layoutY="290.0" prefHeight="25.0" prefWidth="191.0" promptText="Nivel de Carga" />
-      <TextField fx:id="txEquipoTipoConector" layoutX="65.0" layoutY="251.0" prefHeight="25.0" prefWidth="191.0" promptText="Tipo Conector" />
-      <TextField fx:id="txEquipoTimeCarga" layoutX="65.0" layoutY="214.0" prefHeight="25.0" prefWidth="191.0" promptText="Tiempo de Carga" />
-      <TextField fx:id="txEquipoTipo" layoutX="65.0" layoutY="177.0" prefHeight="25.0" prefWidth="191.0" promptText="Tipo" />
-      <TextField fx:id="txEquipoPotencia" layoutX="65.0" layoutY="143.0" prefHeight="25.0" prefWidth="191.0" promptText="Potencia" />
-      <Button fx:id="btCrearEquipo" layoutX="98.0" layoutY="335.0" mnemonicParsing="false" stylesheets="@../css/styling.css" text="Crear Equipo" />
+      <TextField fx:id="txEquipoID" layoutX="185.0" layoutY="147.0" prefHeight="25.0" prefWidth="191.0" promptText="Id Equipo" />
+      <TextField fx:id="txEquipoTipoConector" layoutX="185.0" layoutY="321.0" prefHeight="25.0" prefWidth="191.0" promptText="Tipo Conector" />
+      <TextField fx:id="txEquipoTimeCarga" layoutX="185.0" layoutY="279.0" prefHeight="25.0" prefWidth="191.0" promptText="Tiempo de Carga" />
+      <TextField fx:id="txEquipoTipo" layoutX="185.0" layoutY="236.0" prefHeight="25.0" prefWidth="191.0" promptText="Tipo" />
+      <TextField fx:id="txEquipoPotencia" layoutX="185.0" layoutY="196.0" prefHeight="25.0" prefWidth="191.0" promptText="Potencia" />
+      <Button fx:id="btCrearEquipo" layoutX="218.0" layoutY="373.0" mnemonicParsing="false" onAction="#crearEquipoRapido" stylesheets="@../css/styling.css" text="Crear Equipo" />
+      <Label layoutX="201.0" layoutY="70.0" text="Equipo Rapido " textFill="#52438f">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

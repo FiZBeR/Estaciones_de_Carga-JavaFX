@@ -5,32 +5,34 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="354.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.controlador.FormEquipoUltraController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.controlador.FormEquipoUltraController">
    <children>
-      <Pane layoutX="-6.0" prefHeight="74.0" prefWidth="361.0" style="-fx-background-color: #52438f;">
-         <children>
-            <Label layoutX="84.0" layoutY="21.0" text="Equipo Ultra Rapido " textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-            </Label>
-         </children></Pane>
-      <TextField fx:id="txEquipoUID" layoutX="100.0" layoutY="100.0" promptText="Id Equipo" />
-      <TextField fx:id="txEquipoUTipo" layoutX="185.0" layoutY="140.0" promptText="Tipo Equipo" />
-      <TextField fx:id="txEquipoUPotencia" layoutX="28.0" layoutY="140.0" promptText="Potencia" />
-      <TextField fx:id="txEquipoUTipoConector" layoutX="185.0" layoutY="175.0" promptText="Tipo Conector" />
-      <TextField fx:id="txEquipoUTimeCarga" layoutX="28.0" layoutY="175.0" promptText="Tiempo de Carga" />
-      <TextField fx:id="txEquipoUSistemaEnfriamiento" layoutX="185.0" layoutY="215.0" promptText="Sistema de Enfriamiento " />
-      <TextField fx:id="txEquipoUNivelCarga" layoutX="28.0" layoutY="215.0" promptText="Nivel de Carga" />
-      <TextField fx:id="txEquipoUVoltaje" layoutX="185.0" layoutY="255.0" promptText="Voltaje Max" />
-      <TextField fx:id="txEquipoUMaxCapacity" layoutX="28.0" layoutY="255.0" promptText="Max Capacidad" />
-      <TextField fx:id="txEquipoUTimeCargaultra" layoutX="185.0" layoutY="301.0" promptText="Timepo de Carga Ultra Rapido" />
-      <RadioButton fx:id="opYes" layoutX="51.0" layoutY="314.0" mnemonicParsing="false" text="Si" />
-      <RadioButton fx:id="opNo" layoutX="109.0" layoutY="314.0" mnemonicParsing="false" text="No" />
-      <Label layoutX="39.0" layoutY="288.0" text="Proteccion SobreCarga" />
-      <Button fx:id="btCrearEquipoUltra" layoutX="79.0" layoutY="340.0" mnemonicParsing="false" stylesheets="@../css/styling.css" text="Crear Equipo Ultra Rapido" />
+      <TextField fx:id="txEquipoUID" layoutX="285.0" layoutY="131.0" prefHeight="40.0" prefWidth="162.0" promptText="Id Equipo" />
+      <TextField fx:id="txEquipoUPotencia" layoutX="105.0" layoutY="131.0" prefHeight="40.0" prefWidth="162.0" promptText="Potencia" />
+      <TextField fx:id="txEquipoUTipoConector" layoutX="285.0" layoutY="189.0" prefHeight="40.0" prefWidth="162.0" promptText="Tipo Conector" />
+      <TextField fx:id="txEquipoUTimeCarga" layoutX="105.0" layoutY="189.0" prefHeight="40.0" prefWidth="162.0" promptText="Tiempo de Carga" />
+      <TextField fx:id="txEquipoUSistemaEnfriamiento" layoutX="203.0" layoutY="246.0" prefHeight="40.0" prefWidth="149.0" promptText="Sistema de Enfriamiento " />
+      <TextField fx:id="txEquipoUVoltaje" layoutX="285.0" layoutY="301.0" prefHeight="40.0" prefWidth="149.0" promptText="Voltaje Max" />
+      <TextField fx:id="txEquipoUMaxCapacity" layoutX="105.0" layoutY="301.0" prefHeight="40.0" prefWidth="162.0" promptText="Max Capacidad" />
+      <RadioButton fx:id="opYes" layoutX="225.0" layoutY="390.0" mnemonicParsing="false" text="Si">
+         <font>
+            <Font size="16.0" />
+         </font></RadioButton>
+      <RadioButton fx:id="opNo" layoutX="301.0" layoutY="390.0" mnemonicParsing="false" text="No">
+         <font>
+            <Font size="16.0" />
+         </font></RadioButton>
+      <Label layoutX="200.0" layoutY="354.0" text="Proteccion SobreCarga">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Button fx:id="btCrearEquipoUltra" layoutX="179.0" layoutY="433.0" mnemonicParsing="false" onAction="#crearEquiUltra" stylesheets="@../css/styling.css" text="Crear Equipo Ultra Rapido" />
+      <Label layoutX="148.0" layoutY="57.0" text="Equipo Ultra Rapido " textFill="#52438f">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

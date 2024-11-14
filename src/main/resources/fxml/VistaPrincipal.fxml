@@ -12,32 +12,32 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.controlador.VistaPrincipalController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.controlador.VistaPrincipalController">
    <children>
-      <Pane prefHeight="58.0" prefWidth="600.0" style="-fx-background-color: #514C90;">
+      <Pane prefHeight="58.0" prefWidth="800.0" style="-fx-background-color: #514C90;">
          <children>
             <Label layoutX="20.0" layoutY="12.0" text="EcoCharge " textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="546.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="746.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/icons8-charger-64.png" />
                </image>
             </ImageView>
          </children>
       </Pane>
-      <SplitPane fx:id="viewMain" dividerPositions="0.29797979797979796" layoutY="58.0" prefHeight="344.0" prefWidth="600.0">
+      <SplitPane fx:id="viewMain" dividerPositions="0.29797979797979796" layoutY="58.0" prefHeight="542.0" prefWidth="800.0">
         <items>
           <AnchorPane fx:id="sideMenu" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #6E5CC2;">
                <children>
-                  <Button fx:id="btEstaciones" layoutX="37.0" layoutY="99.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" stylesheets="@../css/menuStyling.css" text="Estaciones" />
-                  <Button fx:id="btMantenimiento" layoutX="37.0" layoutY="136.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="124.0" stylesheets="@../css/menuStyling.css" text="Mantenimiento" />
-                  <Button fx:id="btReportes" layoutX="37.0" layoutY="176.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="124.0" stylesheets="@../css/menuStyling.css" text="Reportes" />
-                  <Button fx:id="btAlertas" layoutX="37.0" layoutY="216.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="124.0" stylesheets="@../css/menuStyling.css" text="Alertas" />
+                  <Button fx:id="btEstaciones" layoutX="37.0" layoutY="99.0" mnemonicParsing="false" onAction="#viewEstaciones" prefHeight="25.0" prefWidth="153.0" stylesheets="@../css/menuStyling.css" text="Estaciones" />
+                  <Button fx:id="btMantenimiento" layoutX="37.0" layoutY="136.0" mnemonicParsing="false" onAction="#viewMantenimiento" prefHeight="40.0" prefWidth="124.0" stylesheets="@../css/menuStyling.css" text="Mantenimiento" />
+                  <Button fx:id="btReportes" layoutX="37.0" layoutY="176.0" mnemonicParsing="false" onAction="#viewReportes" prefHeight="40.0" prefWidth="124.0" stylesheets="@../css/menuStyling.css" text="Reportes" />
+                  <Button fx:id="btAlertas" layoutX="37.0" layoutY="216.0" mnemonicParsing="false" onAction="#viewAlertas" prefHeight="40.0" prefWidth="124.0" stylesheets="@../css/menuStyling.css" text="Alertas" />
                   <TextField fx:id="txIDEstacion" layoutX="13.0" layoutY="14.0" promptText="Id de la Estacion" />
-                  <Button fx:id="btBusacarEstacionID" layoutX="47.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" stylesheets="@../css/button-option.css" text="Buscar" />
+                  <Button fx:id="btBusacarEstacionID" layoutX="47.0" layoutY="46.0" mnemonicParsing="false" onAction="#buscarId" prefHeight="25.0" prefWidth="81.0" stylesheets="@../css/button-option.css" text="Buscar" />
                   <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="17.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/icons8-business-report-24.png" />
@@ -58,25 +58,25 @@
                         <Image url="@../images/icons8-atención-50.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="26.0" layoutX="54.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="30.0" fitWidth="26.0" layoutX="57.0" layoutY="493.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/icons8-salida-48.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="btSalir" layoutX="73.0" layoutY="295.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="124.0" stylesheets="@../css/menuStyling.css" text="Salir" />
+                  <Button fx:id="btSalir" layoutX="76.0" layoutY="486.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="124.0" stylesheets="@../css/menuStyling.css" text="Salir" />
                </children>
             </AnchorPane>
           <AnchorPane fx:id="sideOutlet" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Pane prefHeight="58.0" prefWidth="417.0" style="-fx-background-color: #DEE1E6;">
+                  <Pane prefHeight="58.0" prefWidth="557.0" style="-fx-background-color: #DEE1E6;">
                      <children>
                         <Label layoutX="14.0" layoutY="21.0" text="Estaciones" />
-                        <Button fx:id="btCrearEstacion" layoutX="97.0" layoutY="13.0" mnemonicParsing="false" stylesheets="@../css/button-option.css" text="Crear" />
-                        <Button fx:id="btEditarEstacion" layoutX="175.0" layoutY="13.0" mnemonicParsing="false" stylesheets="@../css/button-option.css" text="Editar" />
-                        <Button fx:id="btEliminarEstacion" layoutX="254.0" layoutY="13.0" mnemonicParsing="false" stylesheets="@../css/button-option.css" text="Eliminar" />
+                        <Button fx:id="btCrearEstacion" layoutX="97.0" layoutY="13.0" mnemonicParsing="false" onAction="#formCrear" stylesheets="@../css/button-option.css" text="Crear" />
+                        <Button fx:id="btEditarEstacion" layoutX="175.0" layoutY="13.0" mnemonicParsing="false" onAction="#formEditar" stylesheets="@../css/button-option.css" text="Editar" />
+                        <Button fx:id="btEliminarEstacion" layoutX="254.0" layoutY="13.0" mnemonicParsing="false" onAction="#estacionEliminar" stylesheets="@../css/button-option.css" text="Eliminar" />
                      </children>
                   </Pane>
-                  <TableView fx:id="tbEstaciones" layoutY="58.0" prefHeight="287.0" prefWidth="417.0">
+                  <TableView fx:id="tbEstaciones" layoutY="58.0" prefHeight="483.0" prefWidth="557.0">
                     <columns>
                       <TableColumn fx:id="tbColumnNombre" prefWidth="75.0" text="Nombre" />
                       <TableColumn fx:id="tbColumnID" prefWidth="75.0" text="Id" />

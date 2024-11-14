@@ -4,11 +4,13 @@ import java.io.*;
 import java.util.*;
 
 /**
- * Clase que representa un vehículo eléctrico con sus características principales.
+ * Representa un vehículo eléctrico con información sobre su matrícula, marca, modelo,
+ * capacidad de batería, carga de batería y el estado de la batería.
  */
 public class Vehiculo {
+
     /**
-     * Matrícula o placa del vehículo.
+     * Matrícula del vehículo, un identificador único asociado al vehículo.
      */
     private String matricula;
 
@@ -23,29 +25,30 @@ public class Vehiculo {
     private String modelo;
 
     /**
-     * Capacidad total de la batería del vehículo en kilovatios-hora (kWh).
+     * Capacidad total de la batería del vehículo (en kWh).
      */
     private int capacidadBateria;
 
     /**
-     * Nivel de carga actual de la batería del vehículo.
+     * Carga actual de la batería del vehículo (en kWh).
      */
     private int cargaBateria;
 
     /**
-     * Estado de la batería del vehículo (por ejemplo: "Buena", "Defectuosa", "Reemplazo requerido").
+     * Estado de la batería del vehículo, por ejemplo, "cargada", "baja", "en espera".
      */
     private String estadoBateria;
 
     /**
-     * Constructor que inicializa un nuevo vehículo con los detalles proporcionados.
+     * Constructor que inicializa un vehículo con su matrícula, marca, modelo, capacidad de batería,
+     * carga de batería y estado de la batería.
      *
-     * @param matricula       Matrícula del vehículo.
-     * @param marca           Marca del vehículo.
-     * @param modelo          Modelo del vehículo.
-     * @param capacidadBateria Capacidad total de la batería en kWh.
-     * @param cargaBateria    Nivel actual de carga de la batería.
-     * @param estadoBateria   Estado actual de la batería.
+     * @param matricula Matrícula única del vehículo.
+     * @param marca Marca del vehículo.
+     * @param modelo Modelo del vehículo.
+     * @param capacidadBateria Capacidad total de la batería del vehículo.
+     * @param cargaBateria Carga actual de la batería del vehículo.
+     * @param estadoBateria Estado actual de la batería del vehículo.
      */
     public Vehiculo(String matricula, String marca, String modelo, int capacidadBateria, int cargaBateria, String estadoBateria) {
         this.matricula = matricula;
@@ -59,7 +62,7 @@ public class Vehiculo {
     /**
      * Obtiene la matrícula del vehículo.
      *
-     * @return Matrícula del vehículo.
+     * @return La matrícula del vehículo.
      */
     public String getMatricula() {
         return matricula;
@@ -68,7 +71,7 @@ public class Vehiculo {
     /**
      * Establece la matrícula del vehículo.
      *
-     * @param matricula Matrícula del vehículo.
+     * @param matricula La nueva matrícula del vehículo.
      */
     public void setMatricula(String matricula) {
         this.matricula = matricula;
@@ -77,7 +80,7 @@ public class Vehiculo {
     /**
      * Obtiene la marca del vehículo.
      *
-     * @return Marca del vehículo.
+     * @return La marca del vehículo.
      */
     public String getMarca() {
         return marca;
@@ -86,7 +89,7 @@ public class Vehiculo {
     /**
      * Establece la marca del vehículo.
      *
-     * @param marca Marca del vehículo.
+     * @param marca La nueva marca del vehículo.
      */
     public void setMarca(String marca) {
         this.marca = marca;
@@ -95,7 +98,7 @@ public class Vehiculo {
     /**
      * Obtiene el modelo del vehículo.
      *
-     * @return Modelo del vehículo.
+     * @return El modelo del vehículo.
      */
     public String getModelo() {
         return modelo;
@@ -104,7 +107,7 @@ public class Vehiculo {
     /**
      * Establece el modelo del vehículo.
      *
-     * @param modelo Modelo del vehículo.
+     * @param modelo El nuevo modelo del vehículo.
      */
     public void setModelo(String modelo) {
         this.modelo = modelo;
@@ -113,61 +116,61 @@ public class Vehiculo {
     /**
      * Obtiene la capacidad total de la batería del vehículo.
      *
-     * @return Capacidad de la batería en kWh.
+     * @return La capacidad de la batería (en kWh).
      */
     public int getCapacidadBateria() {
         return capacidadBateria;
     }
 
     /**
-     * Establece la capacidad total de la batería del vehículo.
+     * Establece la capacidad de la batería del vehículo.
      *
-     * @param capacidadBateria Capacidad de la batería en kWh.
+     * @param capacidadBateria La nueva capacidad de la batería (en kWh).
      */
     public void setCapacidadBateria(int capacidadBateria) {
         this.capacidadBateria = capacidadBateria;
     }
 
     /**
-     * Obtiene el nivel de carga actual de la batería del vehículo.
+     * Obtiene la carga actual de la batería del vehículo.
      *
-     * @return Nivel de carga actual en kWh.
+     * @return La carga de la batería (en kWh).
      */
     public int getCargaBateria() {
         return cargaBateria;
     }
 
     /**
-     * Establece el nivel de carga actual de la batería del vehículo.
+     * Establece la carga actual de la batería del vehículo.
      *
-     * @param cargaBateria Nivel de carga actual en kWh.
+     * @param cargaBateria La nueva carga de la batería (en kWh).
      */
     public void setCargaBateria(int cargaBateria) {
         this.cargaBateria = cargaBateria;
     }
 
     /**
-     * Obtiene el estado de la batería del vehículo.
+     * Obtiene el estado actual de la batería del vehículo.
      *
-     * @return Estado de la batería.
+     * @return El estado de la batería, como una cadena de texto (por ejemplo, "cargada", "baja", "en espera").
      */
     public String getEstadoBateria() {
         return estadoBateria;
     }
 
     /**
-     * Establece el estado de la batería del vehículo.
+     * Establece el estado actual de la batería del vehículo.
      *
-     * @param estadoBateria Estado de la batería.
+     * @param estadoBateria El nuevo estado de la batería.
      */
     public void setEstadoBateria(String estadoBateria) {
         this.estadoBateria = estadoBateria;
     }
 
     /**
-     * Devuelve una representación en formato String del objeto Vehiculo.
+     * Representa al vehículo como una cadena de texto.
      *
-     * @return String con los detalles del vehículo.
+     * @return Una cadena que describe el vehículo y sus atributos.
      */
     @Override
     public String toString() {
@@ -182,13 +185,12 @@ public class Vehiculo {
     }
 
     /**
-     * Realiza una evaluación del estado general del vehículo (por ejemplo, estado de la batería).
+     * Método para evaluar el estado del vehículo.
      *
-     * @return Resultado de la evaluación del vehículo.
+     * @return Una cadena de texto con la evaluación (aún no implementada).
      */
     public String evaluacion() {
-        // TODO implementar aquí
+        // TODO implement here
         return "";
     }
-
 }
