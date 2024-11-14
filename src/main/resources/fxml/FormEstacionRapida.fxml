@@ -1,34 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="viewEstacionRapida" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.controlador.FormEstacionRapidaController">
+<AnchorPane fx:id="viewEstacionRapida" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.controlador.FormEstacionRapidaController">
    <children>
-      <TextField id="txIdEstacion" fx:id="txEstacionId" layoutX="134.0" layoutY="152.0" prefHeight="29.0" prefWidth="294.0" promptText="Id" />
-      <TextField id="txEstado" fx:id="txEstacionEstado" layoutX="134.0" layoutY="243.0" prefHeight="29.0" prefWidth="294.0" promptText="Estado" />
-      <TextField id="txDireccion" fx:id="txEstacionDireccion" layoutX="134.0" layoutY="197.0" prefHeight="29.0" prefWidth="294.0" promptText="Direccion" />
-      <TextField id="txNombreEstacion" fx:id="txNombreEstacion" layoutX="134.0" layoutY="106.0" prefHeight="29.0" prefWidth="294.0" promptText="Nombre" />
-      <Button id="btCrearEstacion" fx:id="BTCrearEstacion" layoutX="134.0" layoutY="464.0" mnemonicParsing="false" onAction="#crearEstacion" prefHeight="25.0" prefWidth="294.0" stylesheets="@../css/styling.css" text="Agregar Estacion" />
-      <TextField id="txCapacidad" fx:id="txEstacionCapacidad" layoutX="134.0" layoutY="287.0" prefHeight="29.0" prefWidth="294.0" promptText="Capacidad" />
-      <SplitMenuButton fx:id="cbPDC" layoutX="134.0" layoutY="420.0" mnemonicParsing="false" text="Puntos De Carga">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
-        </items>
-      </SplitMenuButton>
-      <Button id="btPuntodCarga" fx:id="btCrearPDC" layoutX="281.0" layoutY="420.0" mnemonicParsing="false" onAction="#crearPdC" prefHeight="25.0" prefWidth="146.0" text="Crear Punto de Carga" />
-      <TextField id="txCapacidad" fx:id="txCargaPromedio" layoutX="134.0" layoutY="334.0" prefHeight="29.0" prefWidth="294.0" promptText="Tiempo promedio de Carga" />
-      <TextField id="txCapacidad" fx:id="txTariafaCarga" layoutX="134.0" layoutY="377.0" prefHeight="29.0" prefWidth="294.0" promptText="Tarifa " />
-      <Label layoutX="176.0" layoutY="53.0" text="Estaciones Rapida" textFill="#52438f">
+      <TextField id="txIdEstacion" fx:id="txEstacionId" layoutX="271.0" layoutY="153.0" prefHeight="29.0" prefWidth="294.0" promptText="Id" />
+      <TextField id="txEstado" fx:id="txEstacionEstado" layoutX="271.0" layoutY="244.0" prefHeight="29.0" prefWidth="294.0" promptText="Estado" />
+      <TextField id="txDireccion" fx:id="txEstacionDireccion" layoutX="271.0" layoutY="198.0" prefHeight="29.0" prefWidth="294.0" promptText="Direccion" />
+      <TextField id="txNombreEstacion" fx:id="txNombreEstacion" layoutX="271.0" layoutY="107.0" prefHeight="29.0" prefWidth="294.0" promptText="Nombre" />
+      <Button id="btCrearEstacion" fx:id="BTCrearEstacion" layoutX="271.0" layoutY="465.0" mnemonicParsing="false" onAction="#crearEstacion" prefHeight="25.0" prefWidth="294.0" stylesheets="@../css/styling.css" text="Agregar Estacion" />
+      <TextField id="txCapacidad" fx:id="txEstacionCapacidad" layoutX="271.0" layoutY="288.0" prefHeight="29.0" prefWidth="294.0" promptText="Capacidad" />
+      <Button id="btPuntodCarga" fx:id="btCrearPDC" layoutX="418.0" layoutY="421.0" mnemonicParsing="false" onAction="#crearPdC" prefHeight="25.0" prefWidth="146.0" text="Crear Punto de Carga" />
+      <TextField id="txCapacidad" fx:id="txCargaPromedio" layoutX="271.0" layoutY="335.0" prefHeight="29.0" prefWidth="294.0" promptText="Tiempo promedio de Carga" />
+      <TextField id="txCapacidad" fx:id="txTariafaCarga" layoutX="271.0" layoutY="378.0" prefHeight="29.0" prefWidth="294.0" promptText="Tarifa " />
+      <Label layoutX="313.0" layoutY="54.0" text="Estaciones Rapida" textFill="#52438f">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
+      <ComboBox fx:id="cbPDC" layoutX="271.0" layoutY="421.0" prefHeight="25.0" prefWidth="132.0" promptText="Punto de Carga" />
    </children>
 </AnchorPane>

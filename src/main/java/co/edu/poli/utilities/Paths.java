@@ -2,7 +2,7 @@ package co.edu.poli.utilities;
 
 public class Paths {
 
-    public static final String VIEW_PRINCIPAL = "/fxml/VistaPrincipal.fxml";
+    public static final String VIEW_PRINCIPAL = "/fxml/NuevaVistaPincipal.fxml";
     public static final String VIEW_CREAR = "/fxml/SelectEstacion.fxml";
     public static final String VIEW_ESTACION_NORMAL = "/fxml/FormEstacionNormal.fxml";
     public static final String VIEW_ESTACION_RAPIDA = "/fxml/FormEstacionRapida.fxml";

@@ -6,15 +6,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.controlador.FormEquipoRapidoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.controlador.FormEquipoRapidoController">
    <children>
-      <TextField fx:id="txEquipoID" layoutX="185.0" layoutY="147.0" prefHeight="25.0" prefWidth="191.0" promptText="Id Equipo" />
-      <TextField fx:id="txEquipoTipoConector" layoutX="185.0" layoutY="321.0" prefHeight="25.0" prefWidth="191.0" promptText="Tipo Conector" />
-      <TextField fx:id="txEquipoTimeCarga" layoutX="185.0" layoutY="279.0" prefHeight="25.0" prefWidth="191.0" promptText="Tiempo de Carga" />
-      <TextField fx:id="txEquipoTipo" layoutX="185.0" layoutY="236.0" prefHeight="25.0" prefWidth="191.0" promptText="Tipo" />
-      <TextField fx:id="txEquipoPotencia" layoutX="185.0" layoutY="196.0" prefHeight="25.0" prefWidth="191.0" promptText="Potencia" />
-      <Button fx:id="btCrearEquipo" layoutX="218.0" layoutY="373.0" mnemonicParsing="false" onAction="#crearEquipoRapido" stylesheets="@../css/styling.css" text="Crear Equipo" />
-      <Label layoutX="201.0" layoutY="70.0" text="Equipo Rapido " textFill="#52438f">
+      <TextField fx:id="txEquipoID" layoutX="305.0" layoutY="164.0" prefHeight="25.0" prefWidth="191.0" promptText="Id Equipo" />
+      <TextField fx:id="txEquipoTipoConector" layoutX="305.0" layoutY="338.0" prefHeight="25.0" prefWidth="191.0" promptText="Tipo Conector" />
+      <TextField fx:id="txEquipoTimeCarga" layoutX="305.0" layoutY="296.0" prefHeight="25.0" prefWidth="191.0" promptText="Tiempo de Carga" />
+      <TextField fx:id="txEquipoTipo" layoutX="305.0" layoutY="253.0" prefHeight="25.0" prefWidth="191.0" promptText="Tipo" />
+      <TextField fx:id="txEquipoPotencia" layoutX="305.0" layoutY="213.0" prefHeight="25.0" prefWidth="191.0" promptText="Potencia" />
+      <Button fx:id="btCrearEquipo" layoutX="338.0" layoutY="390.0" mnemonicParsing="false" onAction="#crearEquipoRapido" stylesheets="@../css/styling.css" text="Crear Equipo" />
+      <Label layoutX="321.0" layoutY="87.0" text="Equipo Rapido " textFill="#52438f">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="viewMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.controlador.NuevaVistaPrincipalController">
+   <children>
+      <Pane prefHeight="80.0" prefWidth="800.0" style="-fx-background-color: #514C90;">
+         <children>
+            <Label layoutX="20.0" layoutY="20.0" text="EcoCharge" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="68.0" fitWidth="79.0" layoutX="710.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-charger-64.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <AnchorPane fx:id="subViewMain" layoutY="80.0" prefHeight="521.0" prefWidth="800.0" style="-fx-background-color: #d4d2e3;">
+         <children>
+            <TableView fx:id="infoTable" layoutX="262.0" layoutY="28.0" prefHeight="424.0" prefWidth="511.0">
+              <columns>
+                <TableColumn fx:id="columnNombre" prefWidth="75.0" text="Nombre" />
+                <TableColumn fx:id="columnID" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="columnUbi" prefWidth="75.0" text="Ubicacion" />
+                  <TableColumn fx:id="columnEstado" prefWidth="75.0" text="Estado" />
+                  <TableColumn fx:id="columnCapacidad" prefWidth="75.0" text="Capacidad" />
+                  <TableColumn fx:id="columnEstadoPdC" prefWidth="135.0" text="Estado Punto de Carga" />
+              </columns>
+            </TableView>
+            <Button fx:id="btdetalles" layoutX="400.0" layoutY="467.0" mnemonicParsing="false" onAction="#infoID" prefHeight="40.0" prefWidth="97.0" stylesheets="@../css/styling.css" text="Detalles" />
+            <Button fx:id="btEliminar" layoutX="515.0" layoutY="467.0" mnemonicParsing="false" onAction="#delete" prefHeight="40.0" prefWidth="97.0" stylesheets="@../css/button-option.css" text="Eliminar" />
+            <TextField fx:id="laID" layoutX="46.0" layoutY="44.0" promptText="Ingresa El ID" />
+            <Button fx:id="btBuscar" layoutX="79.0" layoutY="80.0" mnemonicParsing="false" onAction="#search" stylesheets="@../css/styling.css" text="Buscar" />
+            <Button fx:id="btCrear" layoutX="79.0" layoutY="156.0" mnemonicParsing="false" onAction="#crear" prefHeight="40.0" prefWidth="84.0" stylesheets="@../css/styling.css" text="Crear" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
