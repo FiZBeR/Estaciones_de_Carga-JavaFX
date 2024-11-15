@@ -32,6 +32,10 @@ public class ImplementacionOperacion implements Operacion {
         this.Estacion = Estacion;
     }
 
+    public co.edu.poli.modelo.Estacion[] getEstacion() {
+        return Estacion;
+    }
+
     /**
      * Crea una nueva estación de carga y la agrega al arreglo de estaciones.
      * Si el arreglo está lleno, su tamaño se duplica para permitir más estaciones.

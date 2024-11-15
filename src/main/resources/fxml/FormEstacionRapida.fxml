@@ -3,26 +3,85 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="viewEstacionRapida" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.controlador.FormEstacionRapidaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.controlador.FormEstacionRapidaController">
    <children>
-      <TextField id="txIdEstacion" fx:id="txEstacionId" layoutX="271.0" layoutY="153.0" prefHeight="29.0" prefWidth="294.0" promptText="Id" />
-      <TextField id="txEstado" fx:id="txEstacionEstado" layoutX="271.0" layoutY="244.0" prefHeight="29.0" prefWidth="294.0" promptText="Estado" />
-      <TextField id="txDireccion" fx:id="txEstacionDireccion" layoutX="271.0" layoutY="198.0" prefHeight="29.0" prefWidth="294.0" promptText="Direccion" />
-      <TextField id="txNombreEstacion" fx:id="txNombreEstacion" layoutX="271.0" layoutY="107.0" prefHeight="29.0" prefWidth="294.0" promptText="Nombre" />
-      <Button id="btCrearEstacion" fx:id="BTCrearEstacion" layoutX="271.0" layoutY="465.0" mnemonicParsing="false" onAction="#crearEstacion" prefHeight="25.0" prefWidth="294.0" stylesheets="@../css/styling.css" text="Agregar Estacion" />
-      <TextField id="txCapacidad" fx:id="txEstacionCapacidad" layoutX="271.0" layoutY="288.0" prefHeight="29.0" prefWidth="294.0" promptText="Capacidad" />
-      <Button id="btPuntodCarga" fx:id="btCrearPDC" layoutX="418.0" layoutY="421.0" mnemonicParsing="false" onAction="#crearPdC" prefHeight="25.0" prefWidth="146.0" text="Crear Punto de Carga" />
-      <TextField id="txCapacidad" fx:id="txCargaPromedio" layoutX="271.0" layoutY="335.0" prefHeight="29.0" prefWidth="294.0" promptText="Tiempo promedio de Carga" />
-      <TextField id="txCapacidad" fx:id="txTariafaCarga" layoutX="271.0" layoutY="378.0" prefHeight="29.0" prefWidth="294.0" promptText="Tarifa " />
-      <Label layoutX="313.0" layoutY="54.0" text="Estaciones Rapida" textFill="#52438f">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="cbPDC" layoutX="271.0" layoutY="421.0" prefHeight="25.0" prefWidth="132.0" promptText="Punto de Carga" />
+      <Pane prefHeight="56.0" prefWidth="800.0" style="-fx-background-color: #514C90;">
+         <children>
+            <Label layoutX="282.0" layoutY="11.0" text="Creacion Estacion Rapida" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="54.0" layoutY="131.0" text="Nombre Estacion" />
+      <Label layoutX="50.0" layoutY="168.0" text="Id Estacion" />
+      <Label layoutX="53.0" layoutY="207.0" text="Ubicacion" />
+      <Label layoutX="52.0" layoutY="239.0" text="Estado" />
+      <Label layoutX="51.0" layoutY="276.0" text="Capacidad" />
+      <Label layoutX="475.0" layoutY="127.0" text="Id Punto de Carga" />
+      <Label layoutX="474.0" layoutY="164.0" text="Esta Disponible" />
+      <Label layoutX="474.0" layoutY="203.0" text="Conector" />
+      <Label layoutX="474.0" layoutY="235.0" text="Estado Punto de Carga" />
+      <Label layoutX="483.0" layoutY="355.0" text="Id Equipo" />
+      <Label layoutX="484.0" layoutY="391.0" text="Potencia " />
+      <Label layoutX="485.0" layoutY="430.0" text="Tipo " />
+      <Label layoutX="52.0" layoutY="311.0" text="Tiempo de Carga Promedio" />
+      <Label layoutX="50.0" layoutY="349.0" text="Costo Kw por hora" />
+      <TextField fx:id="lbEstacionNombre" layoutX="215.0" layoutY="127.0" />
+      <TextField fx:id="lbIdEstacion" layoutX="215.0" layoutY="164.0" />
+      <TextField fx:id="lbUbicacionEstacion" layoutX="215.0" layoutY="203.0" />
+      <TextField fx:id="lbEstadoEstacion" layoutX="215.0" layoutY="235.0" />
+      <TextField fx:id="lbCapacidadEstacion" layoutX="215.0" layoutY="272.0" />
+      <TextField fx:id="lbTiempoCarga" layoutX="215.0" layoutY="307.0" />
+      <TextField fx:id="lbCostoxHora" layoutX="215.0" layoutY="345.0" />
+      <TextField fx:id="lbIdPDC" layoutX="611.0" layoutY="123.0" />
+      <TextField fx:id="lbConectorPDC" layoutX="611.0" layoutY="199.0" />
+      <TextField fx:id="lbEstadoPDC" layoutX="611.0" layoutY="231.0" />
+      <TextField fx:id="lbIdEquipo" layoutX="611.0" layoutY="351.0" />
+      <TextField fx:id="lbPotenicaEquipo" layoutX="611.0" layoutY="387.0" />
+      <TextField fx:id="lbtipoequipo" layoutX="611.0" layoutY="426.0" />
+      <Pane layoutX="50.0" layoutY="74.0" prefHeight="41.0" prefWidth="318.0" style="-fx-background-color: #514C90;">
+         <children>
+            <Label layoutX="112.0" layoutY="3.0" text="Estacion" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="458.0" layoutY="74.0" prefHeight="41.0" prefWidth="318.0" style="-fx-background-color: #514C90;">
+         <children>
+            <Label layoutX="72.0" layoutY="3.0" text="Punto de Carga" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="452.0" layoutY="299.0" prefHeight="41.0" prefWidth="318.0" style="-fx-background-color: #514C90;">
+         <children>
+            <Label layoutX="120.0" layoutY="3.0" text="Equipo" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button fx:id="btCrear" layoutX="161.0" layoutY="515.0" mnemonicParsing="false" onAction="#create" stylesheets="@../css/styling.css" text="Crear" />
+      <Label layoutX="485.0" layoutY="467.0" text="Tiempo de Carga" />
+      <TextField fx:id="lbTiempodeCargaEquipo" layoutX="611.0" layoutY="463.0" />
+      <Label layoutX="485.0" layoutY="506.0" text="Tipo  de Conector" />
+      <TextField fx:id="lbtipoequipo2" layoutX="611.0" layoutY="502.0" />
+      <Label layoutX="110.0" layoutY="404.0" text="Puedes Seleccionar un PDC ya creado" />
+      <ComboBox fx:id="cbPDC" layoutX="140.0" layoutY="435.0" prefWidth="150.0" promptText="Punto de Carga" />
+      <RadioButton fx:id="rbYes" layoutX="630.0" layoutY="164.0" mnemonicParsing="false" text="Si" />
+      <RadioButton fx:id="rbNo" layoutX="701.0" layoutY="164.0" mnemonicParsing="false" text="No" />
    </children>
 </AnchorPane>

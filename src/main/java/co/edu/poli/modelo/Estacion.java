@@ -39,6 +39,9 @@ public abstract class Estacion {
      */
     private PuntoDeCarga[] puntoDeCarga;
 
+    public Estacion() {
+    }
+
     /**
      * Constructor que inicializa una nueva instancia de una estación con sus atributos principales.
      *
@@ -49,6 +52,7 @@ public abstract class Estacion {
      * @param capacidad Capacidad de la estación en términos de puntos de carga disponibles.
      * @param puntoDeCarga Array de puntos de carga asociados a la estación.
      */
+
     public Estacion(String nombre, String idEstacion, String ubicacion, String estado, int capacidad, PuntoDeCarga[] puntoDeCarga) {
         this.nombre = nombre;
         this.idEstacion = idEstacion;

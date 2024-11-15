@@ -2,25 +2,23 @@ package co.edu.poli.controlador;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 import co.edu.poli.modelo.*;
 import co.edu.poli.utilities.Paths;
 import co.edu.poli.vista.Estacion_E_Normal;
+import co.edu.poli.vista.ImplementacionOperacion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class FormEstacionNormalController {
-
     @FXML
     private ResourceBundle resources;
 
@@ -28,40 +26,69 @@ public class FormEstacionNormalController {
     private URL location;
 
     @FXML
-    private Button BTCrearEstacion;
-
-    @FXML
-    private Button btCrearPDC;
+    private Button btCrear;
 
     @FXML
     private ComboBox<PuntoDeCarga> cbPDC;
 
     @FXML
-    private TextField txCostoPorHora;
+    private TextField lbCapacidadEstacion;
 
     @FXML
-    private TextField txEstacionCapacidad;
+    private TextField lbConectorPDC;
 
     @FXML
-    private TextField txEstacionDireccion;
+    private TextField lbCostoxHora;
 
     @FXML
-    private TextField txEstacionEstado;
+    private TextField lbEstaDisponiblePDC;
 
     @FXML
-    private TextField txEstacionId;
+    private TextField lbEstacionNombre;
 
     @FXML
-    private TextField txMaxSoportado;
+    private TextField lbEstadoEstacion;
 
     @FXML
-    private TextField txNombreEstacion;
+    private TextField lbEstadoPDC;
 
     @FXML
-    private TextField txtiempoCarga;
+    private TextField lbIdEquipo;
 
     @FXML
-    private AnchorPane viewEstacionNormal;
+    private TextField lbIdEstacion;
+
+    @FXML
+    private TextField lbIdPDC;
+
+    @FXML
+    private TextField lbNivelMax;
+
+    @FXML
+    private TextField lbPotenicaEquipo;
+
+    @FXML
+    private TextField lbTiempoCarga;
+
+    @FXML
+    private TextField lbUbicacionEstacion;
+
+    @FXML
+    private RadioButton rbNo;
+
+    @FXML
+    private RadioButton rbYes;
+
+    private ToggleGroup opcionesGroup = new ToggleGroup();
+    @FXML
+    private TextField lbtipoequipo;
+
+    NuevaVistaPrincipalController nva = new NuevaVistaPrincipalController();
+
+    String path = " ";
+    String file = "TextNoBinary.txt";
+    ImplementacionOperacion crud = new ImplementacionOperacion();
+    ImplementacionOperacion op = new ImplementacionOperacion();
 
     Mantenimiento[] listaMantenimiento = new Mantenimiento[9];
     Equipo equipoUnoNormal = new Equipo("HYYUI099", 90.0, "Normal", listaMantenimiento);
@@ -73,66 +100,136 @@ public class FormEstacionNormalController {
 
 
     @FXML
-    void crearEstacion(ActionEvent event) {
+    void create(ActionEvent event) {
 
-        String nombreEstacion = txNombreEstacion.getText();
-        String idEstacion = txEstacionId.getText();
-        String ubicacionEstacion = txEstacionDireccion.getText();
-        String estadoEstacion = txEstacionEstado.getText();
-        int capacidadEstacion = Integer.parseInt(txEstacionCapacidad.getText());
-        PuntoDeCarga[] listaPDC = new PuntoDeCarga[9];
+
         PuntoDeCarga puntoSeleccionado = cbPDC.getSelectionModel().getSelectedItem();
-        listaPDC[0] = puntoSeleccionado;
-        int tiempoEstacion = Integer.parseInt(txtiempoCarga.getText());
-        double costoHoraEstacion = Double.parseDouble(txCostoPorHora.getText());
-        double nivelCargaMAxEstacion = Double.parseDouble(txMaxSoportado.getText());
 
-        Estacion_E_Normal estacionENormal = new Estacion_E_Normal(nombreEstacion, idEstacion, ubicacionEstacion, estadoEstacion, capacidadEstacion, listaPDC,
-                tiempoEstacion, costoHoraEstacion, nivelCargaMAxEstacion);
+        if (puntoSeleccionado != null){
+            String nombreEstacion = lbEstacionNombre.getText();
+            String idEstacion = lbIdEstacion.getText();
+            String ubicacionEstacion = lbUbicacionEstacion.getText();
+            String estadoEstacion = lbEstadoEstacion.getText();
+            int capacidadEstacion = Integer.parseInt(lbCapacidadEstacion.getText());
+            PuntoDeCarga[] listaPDC = new PuntoDeCarga[9];
+            listaPDC[0] = puntoSeleccionado;
+            int tiempoEstacion = Integer.parseInt(lbTiempoCarga.getText());
+            double costoHoraEstacion = Double.parseDouble(lbCostoxHora.getText());
+            double nivelCargaMAxEstacion = Double.parseDouble(lbNivelMax.getText());
 
-        System.out.println("estacionENormal = " + estacionENormal);
+            Estacion_E_Normal estacionENormal = new Estacion_E_Normal(nombreEstacion, idEstacion, ubicacionEstacion, estadoEstacion, capacidadEstacion, listaPDC,
+                    tiempoEstacion, costoHoraEstacion, nivelCargaMAxEstacion);
 
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(Paths.VIEW_PRINCIPAL));
-            Parent nuevaVista = loader.load();
+            Estacion[] nuevoArray = new Estacion[9];
+            nuevoArray[0] = estacionENormal;
 
-            Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stageActual.getScene().setRoot(nuevaVista);
-        } catch (IOException e) {
-            // Manejo de la excepción: puedes registrar el error o mostrar un mensaje
-            e.printStackTrace();
-            // También puedes mostrar un mensaje de alerta al usuario si es necesario
+            //op.setEstacion(nuevoArray);
+            System.out.println("Creado Exitosamente: " + crud.create(estacionENormal));
+            //op.serializar(crud.readAll(), path, file);
+
+
+            //System.out.println("Lectura general" + Arrays.toString(crud.readAll()));
+            //System.out.println(Arrays.toString(op.getEstacion()));
+
+            //op.serializar(crud.readAll(), path, file);
+
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource(Paths.VIEW_PRINCIPAL));
+                Parent nuevaVista = loader.load();
+
+                Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stageActual.getScene().setRoot(nuevaVista);
+            } catch (IOException e) {
+                // Manejo de la excepción: puedes registrar el error o mostrar un mensaje
+                e.printStackTrace();
+                // También puedes mostrar un mensaje de alerta al usuario si es necesario
+            }
+        } else {
+            String nombreEstacion = lbEstacionNombre.getText();
+            String idEstacion = lbIdEstacion.getText();
+            String ubicacionEstacion = lbUbicacionEstacion.getText();
+            String estadoEstacion = lbEstadoEstacion.getText();
+            int capacidadEstacion = Integer.parseInt(lbCapacidadEstacion.getText());
+            PuntoDeCarga[] listaPDC = new PuntoDeCarga[9];
+            listaPDC[0] = puntoSeleccionado;
+            int tiempoEstacion = Integer.parseInt(lbTiempoCarga.getText());
+            double costoHoraEstacion = Double.parseDouble(lbCostoxHora.getText());
+            double nivelCargaMAxEstacion = Double.parseDouble(lbNivelMax.getText());
+
+            String idPDC = lbIdPDC.getText();
+            String conectorPDC = lbConectorPDC.getText();
+            String estadoPDC = lbEstadoPDC.getText();
+
+            boolean disponible = false;
+
+            RadioButton seleccionado = (RadioButton) opcionesGroup.getSelectedToggle();
+
+            if (seleccionado != null) {
+                // Obtenemos el texto seleccionado
+                String textoSeleccionado = seleccionado.getText();
+
+                // Convertimos "Sí" a true y "No" a false
+                disponible = textoSeleccionado.equals("Sí");
+            } else {
+                System.out.println("No hay ninguna opción seleccionada");
+            }
+
+            Mantenimiento[] listaMantenimiento = new Mantenimiento[9];
+
+            String idEquipo = lbIdEquipo.getText();
+            double potenciaEquipo = Double.parseDouble(lbPotenicaEquipo.getText());
+            String tipoEquipo = lbtipoequipo.getText();
+
+            Equipo equipoUno = new Equipo(idEquipo, potenciaEquipo, tipoEquipo, listaMantenimiento);
+            PuntoDeCarga pdcUno = new PuntoDeCarga(idPDC, disponible, conectorPDC, estadoPDC, equipoUno);
+
+            listaPDC[0] = pdcUno;
+
+            Estacion_E_Normal estacionENormal = new Estacion_E_Normal(nombreEstacion, idEstacion, ubicacionEstacion, estadoEstacion, capacidadEstacion, listaPDC,
+                    tiempoEstacion, costoHoraEstacion, nivelCargaMAxEstacion);
+
+            System.out.println(crud.create(estacionENormal));
+            System.out.println("Lectura general" + Arrays.toString(crud.readAll()));
+            //op.serializar(crud.readAll(), path, file);
+
+
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource(Paths.VIEW_PRINCIPAL));
+                Parent nuevaVista = loader.load();
+
+                Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stageActual.getScene().setRoot(nuevaVista);
+            } catch (IOException e) {
+                // Manejo de la excepción: puedes registrar el error o mostrar un mensaje
+                e.printStackTrace();
+                // También puedes mostrar un mensaje de alerta al usuario si es necesario
+            }
         }
-    }
 
-    @FXML
-    void crearPdC(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(Paths.VIEW_PUNTODECARGA));
-            Parent nuevaVista = loader.load();
-
-            Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stageActual.getScene().setRoot(nuevaVista);
-        } catch (IOException e) {
-            // Manejo de la excepción: puedes registrar el error o mostrar un mensaje
-            e.printStackTrace();
-            // También puedes mostrar un mensaje de alerta al usuario si es necesario
-        }
     }
 
     @FXML
     void initialize() {
-        assert BTCrearEstacion != null : "fx:id=\"BTCrearEstacion\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
-        assert btCrearPDC != null : "fx:id=\"btCrearPDC\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
+        assert btCrear != null : "fx:id=\"btCrear\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
         assert cbPDC != null : "fx:id=\"cbPDC\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
-        assert txCostoPorHora != null : "fx:id=\"txCostoPorHora\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
-        assert txEstacionCapacidad != null : "fx:id=\"txEstacionCapacidad\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
-        assert txEstacionDireccion != null : "fx:id=\"txEstacionDireccion\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
-        assert txEstacionEstado != null : "fx:id=\"txEstacionEstado\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
-        assert txEstacionId != null : "fx:id=\"txEstacionId\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
-        assert txMaxSoportado != null : "fx:id=\"txMaxSoportado\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
-        assert txNombreEstacion != null : "fx:id=\"txNombreEstacion\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
-        assert txtiempoCarga != null : "fx:id=\"txtiempoCarga\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
+        assert lbCapacidadEstacion != null : "fx:id=\"lbCapacidadEstacion\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
+        assert lbConectorPDC != null : "fx:id=\"lbConectorPDC\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
+        assert lbCostoxHora != null : "fx:id=\"lbCostoxHora\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
+        assert lbEstaDisponiblePDC != null : "fx:id=\"lbEstaDisponiblePDC\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
+        assert lbEstacionNombre != null : "fx:id=\"lbEstacionNombre\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
+        assert lbEstadoEstacion != null : "fx:id=\"lbEstadoEstacion\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
+        assert lbEstadoPDC != null : "fx:id=\"lbEstadoPDC\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
+        assert lbIdEquipo != null : "fx:id=\"lbIdEquipo\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
+        assert lbIdEstacion != null : "fx:id=\"lbIdEstacion\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
+        assert lbIdPDC != null : "fx:id=\"lbIdPDC\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
+        assert lbNivelMax != null : "fx:id=\"lbNivelMax\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
+        assert lbPotenicaEquipo != null : "fx:id=\"lbPotenicaEquipo\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
+        assert lbTiempoCarga != null : "fx:id=\"lbTiempoCarga\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
+        assert lbUbicacionEstacion != null : "fx:id=\"lbUbicacionEstacion\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
+        assert lbtipoequipo != null : "fx:id=\"lbtipoequipo\" was not injected: check your FXML file 'FormEstacionNormal.fxml'.";
+
+        rbNo.setToggleGroup(opcionesGroup);
+        rbYes.setToggleGroup(opcionesGroup);
 
         cbPDC.getItems().addAll(pdCNormal, pdCNormalDos, pdCNormalTres);
         cbPDC.setCellFactory(param -> new ListCell<PuntoDeCarga>() {
@@ -147,6 +244,7 @@ public class FormEstacionNormalController {
                 }
             }
         });
+
     }
 
 }
